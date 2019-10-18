@@ -2,8 +2,11 @@ const mongoose = require("mongoose");
 const Schema   = require("mongoose").Schema;
 
 const userSchema = new Schema({
+<<<<<<< HEAD
   firstname: String,
   lastname: String,
+=======
+>>>>>>> rebasing
   username: String,
   password: String
 }, {

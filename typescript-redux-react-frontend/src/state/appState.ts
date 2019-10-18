@@ -17,9 +17,19 @@ export interface IAssetData {
     asset_value: number;
   }
 
+export interface IUser {
+    username: string;
+    password: string;
+}
+
 export interface IBM{
+<<<<<<< HEAD
     user:IUser;
     assets:IAssetData[]
+=======
+    assets:IAssetData[];
+    user?: IUser;
+>>>>>>> rebasing
 }
 
 

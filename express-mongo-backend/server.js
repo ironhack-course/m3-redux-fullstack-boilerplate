@@ -10,8 +10,12 @@ const PORT = 8080;
 const session        = require("express-session");
 const MongoStore     = require("connect-mongo")(session);
 const logger         = require("morgan");
+<<<<<<< HEAD
 const cookieParser = require('cookie-parser');
 
+=======
+const cookieParser   = require("cookie-parser");
+>>>>>>> rebasing
 // the data structure to save an asset is defined in /express-mongo-backend/asset.model.js
 
 

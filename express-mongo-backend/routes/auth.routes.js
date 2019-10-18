@@ -46,13 +46,13 @@ authController.post("/login", (req, res) => {
   
   User.findOne({ username }, "_id username password", (err, user) => {
     if (err || !user) {
-      res.render("auth/login", { errorMessage: "The username doesn't exist." });
+      // res.render("auth/login", { errorMessage: "The username doesn't exist." });
     } else {
       if (bcrypt.compareSync(userPassword, user.password)) {
         req.session.currentUser = user;
-        res.redirect("/");
+        // res.redirect("/");
       } else {
-        res.render("auth/login", { errorMessage: "Incorrect password." });
+        // res.render("auth/login", { errorMessage: "Incorrect password." });
       }
     }
   });
@@ -60,7 +60,7 @@ authController.post("/login", (req, res) => {
 
 authController.get("/logout", (req, res, next) => {
   if (!req.session.currentUser) { 
-    res.redirect("/login"); 
+    // res.redirect("/login"); 
     return; 
   }
 
@@ -68,7 +68,7 @@ authController.get("/logout", (req, res, next) => {
     if (err) { 
       console.log(err); 
     } else { 
-      res.redirect("/login"); 
+      // res.redirect("/login"); 
     }
   });
 });
