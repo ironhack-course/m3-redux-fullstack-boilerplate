@@ -24,7 +24,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 //we connect the mongoose object to the MongoDB database "assets" that will store and deliver our asset data
 
-mongoose.connect("mongodb://heroku_xf8z0cjt:aonls412odsvfd0e8hlumpu2j7@ds137008.mlab.com:37008/heroku_xf8z0cjt", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/assets' || "mongodb://heroku_xf8z0cjt:aonls412odsvfd0e8hlumpu2j7@ds137008.mlab.com:37008/heroku_xf8z0cjt", { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function () {
