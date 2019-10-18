@@ -23,13 +23,8 @@ export interface IUser {
 }
 
 export interface IBM{
-<<<<<<< HEAD
-    assets:IAssetData[];
-    user?: IUser;
-=======
     user:IUser;
     assets:IAssetData[]
->>>>>>> a2718c9
 }
 
 

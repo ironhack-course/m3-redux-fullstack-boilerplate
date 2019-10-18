@@ -6,20 +6,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-const PORT = 8080;
-const session        = require("express-session");
-const MongoStore     = require("connect-mongo")(session);
-const logger         = require("morgan");
-const cookieParser   = require("cookie-parser");
-=======
 const PORT           = "https://dashboard.heroku.com/apps/patricks-boilerplate";
 const session        = require("express-session");
 const MongoStore     = require("connect-mongo")(session);
 const logger         = require("morgan");
 const cookieParser   = require('cookie-parser');
 
->>>>>>> a2718c9
 // the data structure to save an asset is defined in /express-mongo-backend/asset.model.js
 
 

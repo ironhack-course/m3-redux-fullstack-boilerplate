@@ -1,35 +1,10 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
-import { IAction, ActionType } from '../framework/IAction';
-import {IUser,IState} from '../state/appState'
-import axios from 'axios';
-import { reducerFunctions } from '../reducer/appReducer';
-
-import { IWindow } from '../framework/IWindow'
-declare let window: IWindow;
-
-export interface IUserData extends IAction {
-  user: IUser
-}
-
-reducerFunctions[ActionType.signup] = function (newState: IState, action: IUserData) {
-    newState.UI.loggedIn = true;    
-    newState.BM.user = {
-        username: action.user.username,
-        password: action.user.password
-    };
-    newState.UI.waitingForResponse=false;
-    return newState;
-}
-
-=======
 import { ActionType, IAction } from '../framework/IAction';
 import { IState, IUser } from '../state/appState'
 import axios from 'axios';
 import { IWindow } from '../framework/IWindow';
 import { reducerFunctions } from '../reducer/appReducer';
 declare let window: IWindow;
->>>>>>> a2718c9
 
 interface IProps { };
 
@@ -56,42 +31,6 @@ export default class Register extends Component {
     render() {
         return (
             <div>
-<<<<<<< HEAD
-                <h1>Register</h1>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input name="username" type="text"/>
-                </div>
-                <div>
-                    <label htmlFor="password">Password: </label>
-                    <input name="password" type="password"/>
-                </div>
-                <button onClick={this.handleSubmit}>Register</button>
-            </div>
-        )
-    }
-    handleChange = () => {
-
-    }
-    handleSubmit = () => {
-        let username = document.getElementsByName('username')[0] as HTMLInputElement;
-        let password = document.getElementsByName('password')[0] as HTMLInputElement;
-        axios.post("http://localhost:8080/signup", 
-        {
-            username: username.value,
-            password: password.value
-        })
-        .then(response => {
-            const action: IUserData = {
-                type: ActionType.signup,
-                user: {
-                    username: response.data.username,
-                    password: response.data.password
-                }
-            }
-            window.CS.clientAction(action);
-        })
-=======
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="firstname">First name:</label>
                     <input type="text" placeholder="firstname" onChange={this.handleFirstnameChange} value={window.CS.getBMState().user.firstname} />
@@ -162,6 +101,5 @@ export default class Register extends Component {
 
                 console.log(res.data)
             });
->>>>>>> a2718c9
     }
 }
