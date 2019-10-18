@@ -50,8 +50,12 @@ export default class ShowAssets extends Component<IProps, IJSXState> {
           type: ActionType.server_called
         }
         window.CS.clientAction(uiAction);
+<<<<<<< HEAD
 
           const newAsset: IAssetData = {
+=======
+        const newAsset: IAssetData = {
+>>>>>>> a2718c9
           _id: mongoose.Types.ObjectId().toString(),
           asset_name: "",
           asset_value: 0
@@ -60,7 +64,7 @@ export default class ShowAssets extends Component<IProps, IJSXState> {
           type: ActionType.create_asset,
           asset: newAsset
         }
-        axios.post('http://localhost:8080/assets/add', newAsset)
+        axios.post(window.CS.getDBServerURL()+'/assets/add', newAsset)
         .then(res => {
           window.CS.clientAction(action);
           console.log(res.data)

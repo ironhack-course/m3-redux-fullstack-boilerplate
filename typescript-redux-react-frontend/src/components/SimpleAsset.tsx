@@ -54,13 +54,11 @@ export default class SimpleAsset extends React.PureComponent<IProps, IJSXState> 
         this.state = {
             edit_mode: props.edit,
         }
-
     }
 
     render() {
 
         //if the component is in edit mode, it will render different than if it just shows the data
-
         if (this.state.edit_mode)
             return (
                 <tr>
@@ -88,7 +86,6 @@ export default class SimpleAsset extends React.PureComponent<IProps, IJSXState> 
     handleSwitchToEditMode() {
         this.setState({ edit_mode: true });
     }
-
     handleNameChange(event: any) {
         const newAsset = this.props.asset;
         newAsset.asset_name = event.target.value
@@ -107,15 +104,13 @@ export default class SimpleAsset extends React.PureComponent<IProps, IJSXState> 
         }
         window.CS.clientAction(action);
     }
-
-
     handleSave(event: any) {
         this.setState({ edit_mode: false });
         const uiAction: IAction = {
             type: ActionType.server_called
           }
           window.CS.clientAction(uiAction);
-        axios.post('http://localhost:8080/assets/update/' + this.props.asset._id, this.props.asset)
+        axios.post(window.CS.getDBServerURL()+'/assets/update/' + this.props.asset._id, this.props.asset)
         .then(res => {
             const uiAction: IAction = {
                 type: ActionType.asset_updated
@@ -128,7 +123,7 @@ export default class SimpleAsset extends React.PureComponent<IProps, IJSXState> 
             type: ActionType.server_called
           }
           window.CS.clientAction(uiAction);
-          axios.post('http://localhost:8080/assets/update/' + this.props.asset._id, this.props.asset)
+          axios.get(window.CS.getDBServerURL()+'/assets/delete/' + this.props.asset._id)
           .then(res => {
             const action: IAssetAction = {
                 type: ActionType.delete_asset,

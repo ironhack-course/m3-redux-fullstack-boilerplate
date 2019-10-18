@@ -18,7 +18,7 @@ assetRoutes.route('/read').get(function (req, res) {
     });
 });
 
-//C: creat a new asset
+//C: create a new asset
 
 assetRoutes.route('/add').post(function (req, res) {
     console.log("Request to save this asset:" + JSON.stringify(req.body));
@@ -64,7 +64,7 @@ assetRoutes.route('/update/:id').post(function (req, res) {
 //D: delete the asset with the given id
 
 assetRoutes.route('/delete/:id').get(function (req, res) {
-    Asset.deleteOne({ "_id": req.params.id }, function (err, asset) {
+    Asset.findByIdAndDelete(req.params.id, function (err, asset) {
         if (!asset)
             res.status(404).send("data is not found");
         else

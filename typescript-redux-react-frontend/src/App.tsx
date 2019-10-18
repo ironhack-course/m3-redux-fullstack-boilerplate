@@ -35,7 +35,7 @@ export default class App extends React.PureComponent<IProps> {
       type: ActionType.server_called
     }
     window.CS.clientAction(uiAction);
-    axios.get('http://localhost:8080/assets/read').then(response => {
+    axios.get(window.CS.getDBServerURL()+'/assets/read').then(response => {
       console.log("this data was loaded as a result of componentDidMount:");
       console.log(response.data);
       const responseAction: IAssetsLoadedAction = {
