@@ -10,11 +10,11 @@ import { reducerFunctions } from '../reducer/appReducer';
 import { IWindow } from '../framework/IWindow'
 declare let window: IWindow;
 
-interface IProps{};
-interface IJSXState { };
-export interface IAssetAction extends IAction {
-  asset: IAssetData
-}
+  interface IProps{};
+  interface IJSXState { };
+  export interface IAssetAction extends IAction {
+    asset: IAssetData
+  }
 reducerFunctions[ActionType.create_asset] = function (newState: IState, action: IAssetAction) {
   newState.BM.assets.push(action.asset);
   newState.UI.waitingForResponse=false;
@@ -51,7 +51,7 @@ export default class ShowAssets extends Component<IProps, IJSXState> {
         }
         window.CS.clientAction(uiAction);
 
-        const newAsset: IAssetData = {
+          const newAsset: IAssetData = {
           _id: mongoose.Types.ObjectId().toString(),
           asset_name: "",
           asset_value: 0

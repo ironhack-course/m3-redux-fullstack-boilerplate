@@ -10,8 +10,14 @@ export interface IAssetData {
     asset_value: number;
   }
 
+export interface IUser {
+    username: string;
+    password: string;
+}
+
 export interface IBM{
-    assets:IAssetData[]
+    assets:IAssetData[];
+    user?: IUser;
 }
 
 
