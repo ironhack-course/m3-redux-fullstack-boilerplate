@@ -19,7 +19,7 @@ window.CS.initializeStore();
 //now we can render this state to the DOM using React
 ReactDOM.render(
   <Router >
-  <App stateCounter={window.CS.getUIState().counter} />
+    <App stateCounter={window.CS.getUIState().counter} />
   </Router>
 , document.getElementById('root'));
 
