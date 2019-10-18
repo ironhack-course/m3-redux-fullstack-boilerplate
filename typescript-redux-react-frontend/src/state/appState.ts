@@ -23,13 +23,8 @@ export interface IUser {
 }
 
 export interface IBM{
-<<<<<<< HEAD
     user:IUser;
     assets:IAssetData[]
-=======
-    assets:IAssetData[];
-    user?: IUser;
->>>>>>> rebasing
 }
 
 

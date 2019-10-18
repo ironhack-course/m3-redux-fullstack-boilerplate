@@ -50,12 +50,7 @@ export default class ShowAssets extends Component<IProps, IJSXState> {
           type: ActionType.server_called
         }
         window.CS.clientAction(uiAction);
-<<<<<<< HEAD
         const newAsset: IAssetData = {
-=======
-
-          const newAsset: IAssetData = {
->>>>>>> rebasing
           _id: mongoose.Types.ObjectId().toString(),
           asset_name: "",
           asset_value: 0

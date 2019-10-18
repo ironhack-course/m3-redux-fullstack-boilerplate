@@ -6,16 +6,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const PORT = 8080;
+const PORT           = "https://dashboard.heroku.com/apps/patricks-boilerplate";
 const session        = require("express-session");
 const MongoStore     = require("connect-mongo")(session);
 const logger         = require("morgan");
-<<<<<<< HEAD
-const cookieParser = require('cookie-parser');
+const cookieParser   = require('cookie-parser');
 
-=======
-const cookieParser   = require("cookie-parser");
->>>>>>> rebasing
 // the data structure to save an asset is defined in /express-mongo-backend/asset.model.js
 
 
@@ -28,7 +24,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 //we connect the mongoose object to the MongoDB database "assets" that will store and deliver our asset data
 
-mongoose.connect('mongodb://127.0.0.1:27017/assets', { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1:27017/assets' || "mongodb://heroku_xf8z0cjt:aonls412odsvfd0e8hlumpu2j7@ds137008.mlab.com:37008/heroku_xf8z0cjt", { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function () {
